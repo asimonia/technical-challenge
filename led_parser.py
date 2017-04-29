@@ -372,5 +372,17 @@ def get_char(char):
 if __name__ == '__main__':
 
 	while True:
+		# Get input from user
 		parser = input("Enter an alphanumeric combination (0 - 100 characters): ")
-		print(get_char(parser))
+
+		# Build a phrase from each alphanumeric
+		phrase = []
+		for char in parser:
+			phrase.append(get_char(char))
+
+		# Concatenate and print each line of text onscreen
+		for row in range(7):
+			line = []
+			for char in phrase:
+				line.append(char[row])
+			print(''.join(line))
