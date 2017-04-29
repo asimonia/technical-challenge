@@ -126,23 +126,23 @@ def get_char(char):
 	),
 	"M" :
 	(
-	"░░░░░",
-	"██░██",
-	"█░█░█",
-	"█░█░█",
-	"█░░░█",
-	"█░░░█",
-	"░░░░░",
+	"░░░░░░",
+	"░██░██",
+	"░█░█░█",
+	"░█░█░█",
+	"░█░░░█",
+	"░█░░░█",
+	"░░░░░░",
 	),
 	"N" :
 	(
-	"░░░░░",
-	"█░░░█",
-	"██░░█",
-	"█░█░█",
-	"█░░██",
-	"█░░░█",
-	"░░░░░",
+	"░░░░░░",
+	"░█░░░█",
+	"░██░░█",
+	"░█░█░█",
+	"░█░░██",
+	"░█░░░█",
+	"░░░░░░",
 	),
 	"O" :
 	(
@@ -373,7 +373,11 @@ if __name__ == '__main__':
 
 	while True:
 		# Get input from user
-		parser = input("Enter an alphanumeric combination (0 - 100 characters): ")
+		parser = input("Enter an alphanumeric combination (0 - 100 characters): ").upper()
+
+		if not parser.isalnum():
+			print("Please enter a valid alphanumeric combination")
+			continue
 
 		# Build a phrase from each alphanumeric
 		phrase = []
