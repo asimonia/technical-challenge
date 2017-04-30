@@ -49,6 +49,16 @@ def get_char(char):
 	return letters[char]
 
 
+def print_lines(phrase):
+	"""Given a phrase, prints out the lines of text to the screen.
+
+	phrase: list of alphanums
+	"""
+	for row in range(LETTER_ROW):
+		line = [char[row] for char in phrase]
+		print(''.join(line))
+
+
 if __name__ == '__main__':
 
 	while True:
@@ -62,7 +72,6 @@ if __name__ == '__main__':
 		# Build a phrase from each alphanumeric
 		phrase = [get_char(char) for char in parser]
 
-		# Concatenate and print each line of text onscreen
-		for row in range(LETTER_ROW):
-			line = [char[row] for char in phrase]
-			print(''.join(line))
+		# Print lines
+		print_lines(phrase)
+
