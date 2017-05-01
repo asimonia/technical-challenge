@@ -65,6 +65,9 @@ if __name__ == '__main__':
 		# Get input from user
 		parser = input("Enter an alphanumeric combination (0 - 100 characters): ").upper()
 
+		if parser == "":
+			continue
+
 		if not parser.isalnum() or len(parser) > 100:
 			print("Please enter a valid alphanumeric combination")
 			continue
